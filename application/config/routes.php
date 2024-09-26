@@ -32,6 +32,19 @@ $route['employee/update/(:any)'] = "Frontend/EmployeeController/update/$1";
 $route['employee/delete/(:any)'] = "Frontend/EmployeeController/delete/$1";
 
 
+$route['employee/confirmdelete/(:any)']['DELETE'] = "Frontend/EmployeeController/delete/$1";
+// $route['employee/confirmdelete/(:any)'] = "Frontend/EmployeeController/delete/$1";
+
+
+
+
+
+
+
+
+
+
+// url: "/employee/confirmdelete/"+id, ajax = type: "DELETE",
 
 
 // Check the current status of your repository

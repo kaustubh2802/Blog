@@ -21,6 +21,7 @@
                                     <!-- <th>Action</th> -->
                                     <th>Edit</th>
                                     <th>Delete</th>
+                                    <th>Confirm Delete</th>
                                 </tr>
                             </thead>
 
@@ -39,6 +40,9 @@
                                     </td>
                                     <td>
                                         <a href="<?php echo base_url('employee/delete/'.$row->id); ?>" class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger confirm-delete" value="<?php echo $row->id; ?>">Confirm Delete</button>
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>
