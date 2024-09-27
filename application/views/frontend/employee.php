@@ -10,7 +10,7 @@
                         </h5>
                 </div>
                     <div class="card-body">
-                        <table class="table table-bordered">
+                        <table id="myTableOne" class="table table-bordered">
                             <thead>
                                 <tr class="bg-dark text-light">
                                     <th>ID</th>
