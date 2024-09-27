@@ -90,9 +90,10 @@ class EmployeeController extends CI_Controller
 
 
     public function delete($id)
-    {
+    { 
         $this->load->model('EmployeeModel');
         $this->EmployeeModel->deleteEmployee($id);
+        $this->session->set_flashdata('status', 'Employee' . $id . ' is Deleted');
         redirect(base_url('employee'));
     }
 }
