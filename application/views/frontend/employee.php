@@ -1,5 +1,5 @@
-<h1>Hello, world!</h1>
-
+<!-- <h1>Hello, world!</h1> -->
+<a class="btn btn-info m-3" href="<?php echo base_url(''); ?>">HOME</a>
 <div class="container">
     <div class="row">
         <div class="col-md-12 mt-4">
@@ -19,9 +19,14 @@
                     </h5>
                 </div>
                 <div class="card-body">
+                    <form action="<?= base_url('employee/deleteall') ?>" method="POST">
                     <table id="myTableOne" class="table table-bordered">
                         <thead>
-                            <tr class="bg-dark text-light">
+                            <!-- <tr class="bg-dark text-light"> -->
+                            <tr>
+                                <th>
+                                    <button type="submit" name="deleteEmpBtn" class="btn btn-danger btn-sm">Delete All</button>
+                                </th>
                                 <th>ID</th>
                                 <th>First name</th>
                                 <th>Last name</th>
@@ -38,6 +43,9 @@
                         <tbody>
                             <?php foreach ($employee as $row):  ?>
                                 <tr>
+                                    <td class="text-center text-wrap">
+                                        <input type="checkbox" name="checkbox_value[]" value="<?= $row->id; ?>">
+                                    </td>
                                     <td><?php echo $row->id; ?></td>
                                     <td><?php echo $row->first_name; ?></td>
                                     <td><?php echo $row->last_name; ?></td>
@@ -57,6 +65,7 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+                    </form>
                 </div>
             </div>
         </div>

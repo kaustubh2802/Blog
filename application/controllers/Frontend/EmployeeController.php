@@ -96,4 +96,31 @@ class EmployeeController extends CI_Controller
         $this->session->set_flashdata('status', 'Employee' . $id . ' is Deleted');
         redirect(base_url('employee'));
     }
+
+    public function deleteEmpall()
+    {
+        if(isset($_POST['deleteEmpBtn']))
+        {
+            if(!empty($this->input->post('checkbox_value')))
+            {
+               $checked_emp = $this->input->post('checkbox_value');
+               $checked_id= [];
+               foreach($checked_emp as $row)
+               {
+                array_push($checked_id, $row);
+               }
+               $this->load->model('EmployeeModel');
+               $this->EmployeeModel->deleteSelectedEmp($checked_id);
+               $this->session->set_flashdata('status', 'Employee selected data Deleted');
+                redirect(base_url('employee'));
+            }
+            else
+            {
+                $this->session->set_flashdata('status', 'Select atleast 1 id.');
+                redirect(base_url('employee'));
+
+            }
+        }
+
+    }
 }
